@@ -10,33 +10,36 @@ const startServer = (connector, port) => {
   app.use(bodyParser.json());
 
   app.post('/wake', (req, res) => {
+    console.log(`[sphero-http-connector] /wake`);
     connector.wake();
     res.sendStatus(200);
   });
 
   app.post('/sleep', (req, res) => {
+    console.log(`[sphero-http-connector] /sleep`);
     connector.sleep();
     res.sendStatus(200);
   });
 
   app.post('/main-led-color/random', (req, res) => {
+    console.log(`[sphero-http-connector] /main-led-color/random`);
     const red = getRandomColorValue();
     const green = getRandomColorValue();
     const blue = getRandomColorValue();
+    const hexColor = colorConvert.rgb.hex(red, green, blue);
 
-    connector.setMainLedColor(red, green, blue);
+    connector.setMainLedColor(hexColor);
     res.sendStatus(200);
   });
 
   app.post('/main-led-color/hex', (req, res) => {
-    const [ red, green, blue ] = colorConvert.hex.rgb(req.body.color);
-
-    connector.setMainLedColor(red, green, blue);
-
+    console.log(`[sphero-http-connector] /main-led-color/hex (${req.body.color})`);
+    connector.setMainLedColor(req.body.color);
     res.sendStatus(200);
   });
 
   app.listen(port);
+  console.log(`[sphero-http-connector] running on port ${port}`);
 };
 
 module.exports = startServer;
