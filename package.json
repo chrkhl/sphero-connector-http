@@ -1,0 +1,28 @@
+{
+  "name": "sphero-connector-http",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "eslint ."
+  },
+  "bin": {
+    "sphero-connector-http": "index.js"
+  },
+  "author": "Christian Kühl",
+  "license": "MIT",
+  "dependencies": {
+    "cosmiconfig": "5.0.7",
+    "node-ipc": "9.1.1",
+    "update-notifier": "2.5.0",
+    "body-parser": "1.18.3",
+    "express": "4.16.4",
+    "spherov2.js": "0.0.2"
+  },
+  "devDependencies": {
+    "eslint": "5.12.0",
+    "eslint-config-es": "0.9.1"
+  }
+}
