@@ -32,4 +32,4 @@ const readConnectorConfig = async () => {
   };
 };
 
-module.exports = { read: readConnectorConfig };
+module.exports = { readConnectorConfig };
