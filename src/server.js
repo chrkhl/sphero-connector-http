@@ -11,14 +11,16 @@ const startServer = (connector, port) => {
 
   app.post('/wake', (req, res) => {
     console.log(`[sphero-http-connector] /wake`);
-    connector.wake();
-    res.sendStatus(200);
+    const status = connector.wake();
+
+    res.sendStatus(status);
   });
 
   app.post('/sleep', (req, res) => {
     console.log(`[sphero-http-connector] /sleep`);
-    connector.sleep();
-    res.sendStatus(200);
+    const status = connector.sleep();
+
+    res.sendStatus(status);
   });
 
   app.post('/main-led-color/random', (req, res) => {
@@ -28,14 +30,16 @@ const startServer = (connector, port) => {
     const blue = getRandomColorValue();
     const hexColor = colorConvert.rgb.hex(red, green, blue);
 
-    connector.setMainLedColor(hexColor);
-    res.sendStatus(200);
+    const status = connector.setMainLedColor(hexColor);
+
+    res.sendStatus(status);
   });
 
   app.post('/main-led-color/hex', (req, res) => {
     console.log(`[sphero-http-connector] /main-led-color/hex (${req.body.color})`);
-    connector.setMainLedColor(req.body.color);
-    res.sendStatus(200);
+    const status = connector.setMainLedColor(req.body.color);
+
+    res.sendStatus(status);
   });
 
   app.listen(port);
