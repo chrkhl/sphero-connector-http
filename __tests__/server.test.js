@@ -2,6 +2,7 @@ const request = require('supertest');
 const { startServer } = require('../src/server');
 
 const connector = {
+  connectToy: jest.fn(),
   wake: jest.fn(),
   sleep: jest.fn(),
   setMainLedColor: jest.fn()
@@ -9,9 +10,42 @@ const connector = {
 
 describe('server', () => {
   beforeEach(() => {
+    connector.connectToy.mockReset();
     connector.wake.mockReset();
     connector.sleep.mockReset();
     connector.setMainLedColor.mockReset();
+  });
+
+  describe('POST /connect', () => {
+    it('calls connector.connectToy', async () => {
+      connector.connectToy.mockReturnValue(200);
+      const app = startServer(connector);
+
+      const toyType = 'SpheroMini';
+      const toyName = 'SM-1337';
+
+      await request(app).
+        post('/connect').
+        send({ type: toyType, name: toyName }).
+        set('Content-Type', 'application/json');
+
+      expect(connector.connectToy).toHaveBeenCalledTimes(1);
+    });
+
+    it('returns status code from connector.wake', async () => {
+      connector.connectToy.mockReturnValue(200);
+      const app = startServer(connector);
+
+      const toyType = 'SpheroMini';
+      const toyName = 'SM-1337';
+
+      const response = await request(app).
+        post('/connect').
+        send({ type: toyType, name: toyName }).
+        set('Content-Type', 'application/json');
+
+      expect(response.statusCode).toBe(200);
+    });
   });
 
   describe('POST /wake', () => {

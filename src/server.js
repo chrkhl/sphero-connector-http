@@ -9,6 +9,13 @@ const startServer = (connector, port) => {
 
   app.use(bodyParser.json());
 
+  app.post('/connect', async (req, res) => {
+    console.log(`[sphero-http-connector] /connect (type: ${req.body.type}, name: ${req.body.name})`);
+    const status = await connector.connectToy(req.body.type, req.body.name);
+
+    res.sendStatus(status);
+  });
+
   app.post('/wake', (req, res) => {
     console.log(`[sphero-http-connector] /wake`);
     const status = connector.wake();
