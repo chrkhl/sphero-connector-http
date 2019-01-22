@@ -79,10 +79,11 @@ The `toyName` option is currently only supported for `toyType: "SpheroMini"`.
 
 ### API
 
+* `POST /connect` (body: `{ type: 'SpheroMini' }, name: 'SM-0815' }`)
 * `POST /wake`
 * `POST /sleep`
 * `POST /main-led-color/random`
-* `POST /main-led-color/hex`
+* `POST /main-led-color/hex` (body: `{ color: '#ACADDB' }`)
 
 
 ## License
