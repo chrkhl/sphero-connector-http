@@ -49,10 +49,11 @@ const startServer = (connector, port) => {
     res.sendStatus(status);
   });
 
-  app.listen(port);
+  const server = app.listen(port);
+
   console.log(`[sphero-http-connector] running on port ${port}`);
 
-  return app;
+  return { server, app };
 };
 
 module.exports = {
