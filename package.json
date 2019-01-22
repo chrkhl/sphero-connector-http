@@ -17,16 +17,19 @@
   "author": "Christian Kühl",
   "license": "MIT",
   "dependencies": {
-    "cosmiconfig": "5.0.7",
-    "node-ipc": "9.1.1",
-    "update-notifier": "2.5.0",
     "body-parser": "1.18.3",
-    "express": "4.16.4"
+    "cosmiconfig": "5.0.7",
+    "express": "4.16.4",
+    "node-ipc": "9.1.1",
+    "sphero-connector-core": "0.0.4",
+    "update-notifier": "2.5.0"
   },
   "devDependencies": {
+    "coveralls": "3.0.2",
     "eslint": "5.12.0",
     "eslint-config-es": "0.9.1",
-    "jest": "23.6.0"
+    "jest": "23.6.0",
+    "supertest": "3.4.2"
   },
   "jest": {
     "collectCoverageFrom": [

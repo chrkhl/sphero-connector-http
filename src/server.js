@@ -44,6 +44,8 @@ const startServer = (connector, port) => {
 
   app.listen(port);
   console.log(`[sphero-http-connector] running on port ${port}`);
+
+  return app;
 };
 
 module.exports = {
