@@ -1,21 +1,26 @@
 {
   "name": "sphero-connector-http",
   "version": "0.0.1",
-  "description": "",
+  "description": "A small CLI tool to run an express based HTTP server for connecting and controlling Sphero toys via HTTP requests",
+  "author": "Christian Kühl",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrkhl/sphero-connector-http.git"
+  },
   "main": "index.js",
+  "bin": {
+    "sphero-connector-http": "index.js"
+  },
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "test:watch:coverage": "jest --coverage --watchAll",
+    "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "lint": "eslint .",
     "lint:fix": "eslint ."
   },
-  "bin": {
-    "sphero-connector-http": "index.js"
-  },
-  "author": "Christian Kühl",
-  "license": "MIT",
   "dependencies": {
     "body-parser": "1.18.3",
     "cosmiconfig": "5.0.7",
