@@ -4,10 +4,11 @@
 [![Build Status](https://travis-ci.org/chrkhl/sphero-connector-http.svg?branch=master)](https://travis-ci.org/chrkhl/sphero-connector-http)
 [![Coverage](https://coveralls.io/repos/github/chrkhl/sphero-connector-http/badge.svg?branch=master)](https://coveralls.io/github/chrkhl/sphero-connector-http?branch=master)
 
+<img src="https://rawcdn.githack.com/chrkhl/sphero-connector-http/642e945ee9c09d0ec62c23aee090023e1979944a/assets/sphero-connector-http.svg" alt="Sphero Connector HTTP" width="400" />
 
 # Sphero Connector HTTP
 
-This is a small CLI tool to run an [express](https://github.com/expressjs/express) based HTTP server for connecting and controlling Sphero toys via HTTP requests. It uses [Sphero Connector Core](https://github.com/chrkhl/sphero-connector-http), a tiny wrapper around the [unofficial Sphero V2 API](https://github.com/igbopie/spherov2.js) for communicating with Sphero toys.
+This is a small CLI tool to run an [express](https://github.com/expressjs/express) based HTTP server for connecting and controlling Sphero toys via HTTP requests. It uses [Sphero Connector Core](https://github.com/chrkhl/sphero-connector-core), a tiny wrapper around the [unofficial Sphero V2 API](https://github.com/igbopie/spherov2.js) for communicating with Sphero toys.
 
 
 ## Getting Started
