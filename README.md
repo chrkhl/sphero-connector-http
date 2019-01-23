@@ -13,7 +13,7 @@ This is a small CLI tool to run an [express](https://github.com/expressjs/expres
 
 ## Getting Started
 
-Install Sphero-Connector-HTTP via [npm](https://yarnpkg.com/en/package/jest):
+Install Sphero-Connector-HTTP via [npm](https://docs.npmjs.com/cli/npm):
 
 ```bash
 npm install --save sphero-connector-http
