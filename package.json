@@ -52,6 +52,6 @@
     "collectCoverageFrom": [
       "src/**/*.js"
     ],
-    "setupTestFrameworkScriptFile": "<rootDir>/jest-setup.js"
+    "setupFilesAfterEnv": ["<rootDir>/jest-setup.js"]
   }
 }
